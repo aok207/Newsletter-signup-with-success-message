@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/aok207/Newsletter-signup-with-success-message](https://github.com/aok207/Newsletter-signup-with-success-message)
+- Live Site URL: [https://aok207.github.io/Newsletter-signup-with-success-message/](https://aok207.github.io/Newsletter-signup-with-success-message/)
 
 ## My process
 
