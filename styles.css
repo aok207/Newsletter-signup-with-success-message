@@ -1,0 +1,283 @@
+@font-face {
+  font-family: Roboto;
+  src: url(assets/fonts/Roboto-Regular.ttf);
+}
+
+:root {
+  --primary-color: hsl(4, 100%, 67%);
+  --dark-slate-gray: hsl(234, 29%, 20%);
+  --charcoal-gray: hsl(235, 18%, 26%);
+  --gray: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--charcoal-gray);
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+main {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.invisible {
+  display: none !important;
+}
+
+.container {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4);
+}
+
+.success-container {
+  width: 500px;
+  padding: 40px 60px;
+  gap: 20px;
+}
+
+.success-container h1 {
+  margin: 10px 0;
+}
+
+.success-container p {
+  margin: 15px 0;
+  line-height: 1.6rem;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.left-wrapper {
+  padding: 40px;
+  margin-right: 30px;
+  width: 31rem;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.title {
+  color: var(--dark-slate-gray);
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin-bottom: 0;
+}
+
+.paragraph {
+  font-size: 18px;
+  font-weight: 400;
+  word-wrap: break-word;
+  color: var(--charcoal-gray);
+  margin: 0;
+}
+
+.left-wrapper > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.left-wrapper > ul li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+form label {
+  font-weight: 700;
+}
+
+#error-text {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+form > input {
+  font-size: 16px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--gray);
+  outline: none;
+}
+
+form > input:focus {
+  outline: 2px solid var(--dark-slate-gray);
+}
+
+form > input[data-valid="false"] {
+  outline: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: rgba(255, 102, 69, 0.1);
+}
+
+.btn {
+  color: var(--white);
+  background-color: var(--dark-slate-gray);
+  border: none;
+  padding: 18px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+}
+
+.btn:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    hsl(352, 100%, 67%),
+    hsl(15, 100%, 61%)
+  );
+  z-index: 2;
+  transition: all 0.3s cubic-bezier(0.19, 0.67, 0.38, 0.82);
+  opacity: 0;
+}
+
+.btn:hover:after {
+  opacity: 1;
+  box-shadow: 0px 12px 20px rgba(255, 102, 69, 0.6);
+}
+
+.btn span {
+  position: relative;
+  z-index: 4;
+}
+
+.attribution {
+  font-size: 1.13rem;
+  text-align: center;
+  font-family: Roboto, Arial;
+  color: var(--white);
+  margin-top: 20px;
+}
+
+.attribution a {
+  color: var(--white);
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+/* For mobile */
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 0;
+    margin: 0;
+    height: fit-content;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin: 0 20px;
+  }
+
+  .paragraph {
+    font-size: 14px;
+    margin: 0 20px;
+  }
+
+  .left-wrapper {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+  }
+
+  .left-wrapper > ul {
+    margin: 0 20px;
+  }
+
+  .left-wrapper > ul li {
+    gap: 10px;
+  }
+
+  form > input {
+    font-size: 14px;
+    padding: 14px 20px;
+    border-radius: 7px;
+    margin: 10px 20px;
+  }
+
+  form > div {
+    margin-right: 20px;
+  }
+
+  form label {
+    margin-left: 20px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 14px 20px;
+    border-radius: 7px;
+    margin: 20px;
+    margin-bottom: 40px;
+  }
+
+  .btn:after {
+    border-radius: 7px;
+  }
+
+  .right-wrapper {
+    display: none;
+  }
+
+  .success-container {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    padding: 20px;
+    justify-content: center;
+  }
+
+  .success-container h1 {
+    margin-right: 50px;
+  }
+
+  .success-container button {
+    margin: 0;
+    margin-top: 100px;
+  }
+}
